@@ -1,3 +1,31 @@
 <resources>
     <string name="app_name">UnedSecuredSoftware</string>
+
+    <!-- GENERAL TEXTS -->
+    <string name="loading">Loading…</string>
+    <string name="search">Search</string>
+    <string name="quit_message">Are you sure exit the application?</string>
+    <string name="start">Start</string>
+    <string name="end">End</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="offense">Offense</string>
+    <string name="cancel">Cancel</string>
+    <string name="create">Create</string>
+    <string name="navigation_drawer_open">Open drawer</string>
+    <string name="navigation_drawer_close">Close drawer</string>
+    <string name="action_settings">Settings</string>
+
+    <!-- SPLASH -->
+    <string name="splash_title">UNED - Secure Software</string>
+
+    <!-- LOGIN -->
+    <string name="user">User</string>
+    <string name="password">Password</string>
+    <string name="login">Login</string>
+    <string name="register">Register</string>
+
+    <!-- REGISTER -->
+    <string name="repeat_password">Repeat Password</string>
+
 </resources>
