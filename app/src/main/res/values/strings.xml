@@ -27,5 +27,14 @@
 
     <!-- REGISTER -->
     <string name="repeat_password">Repeat Password</string>
+    <string name="create_user">Create User</string>
+    <string name="error_user_exist">User exist</string>
+    <string name="error_password_different">Password different</string>
+    <string name="error_register">Eror registering</string>
+    <string name="form_uncomplete">Form uncomplete</string>
+
+    <!-- MAIN -->
+    <string name="main">Principal</string>
+
 
 </resources>

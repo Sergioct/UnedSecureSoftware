@@ -6,7 +6,7 @@ import net.sqlcipher.database.SQLiteDatabase;
 import net.sqlcipher.database.SQLiteOpenHelper;
 
 import sergiocrespotoubes.com.unedsecuredsoftware.SecureApplication;
-import sergiocrespotoubes.com.unedsecuredsoftware.database.repository.UsuariosRepository;
+import sergiocrespotoubes.com.unedsecuredsoftware.database.repository.UsersRepository;
 
 public class DbHelper extends SQLiteOpenHelper {
 
@@ -29,17 +29,20 @@ public class DbHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL(UsuariosRepository.createTable());
+        db.execSQL(UsersRepository.createTable());
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         switch(oldVersion){
+            case 0:
+
+            break;
             case 1:
 
             break;
             default:
-                db.execSQL("DROP TABLE IF EXISTS " + UsuariosRepository.TABLE_NAME);
+                db.execSQL("DROP TABLE IF EXISTS " + UsersRepository.TABLE_NAME);
                 onCreate(db);
             break;
         }

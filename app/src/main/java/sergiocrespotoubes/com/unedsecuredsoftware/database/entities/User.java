@@ -1,14 +1,14 @@
 package sergiocrespotoubes.com.unedsecuredsoftware.database.entities;
 
 
-import sergiocrespotoubes.com.unedsecuredsoftware.database.repository.UsuariosRepository;
+import sergiocrespotoubes.com.unedsecuredsoftware.database.repository.UsersRepository;
 
 /**
  * Created by SCrespo on 04/05/2016.
  */
-public class Usuario {
+public class User {
 
-    public Usuario(){
+    public User(){
         super();
     }
 
@@ -42,12 +42,12 @@ public class Usuario {
         this.password = password;
     }
 
-    public Usuario save() {
-        return UsuariosRepository.save(this);
+    public User save() {
+        return UsersRepository.save(this);
     }
 
     public void delete() {
-        UsuariosRepository.delete(this);
+        UsersRepository.delete(this);
     }
 
 }

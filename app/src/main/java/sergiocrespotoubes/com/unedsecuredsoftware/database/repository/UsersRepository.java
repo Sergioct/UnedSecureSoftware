@@ -6,12 +6,12 @@ import android.support.annotation.NonNull;
 import net.sqlcipher.Cursor;
 
 import sergiocrespotoubes.com.unedsecuredsoftware.database.DbHelper;
-import sergiocrespotoubes.com.unedsecuredsoftware.database.entities.Usuario;
+import sergiocrespotoubes.com.unedsecuredsoftware.database.entities.User;
 
 /**
  * Created by SCrespo on 04/05/2016.
  */
-public class UsuariosRepository {
+public class UsersRepository {
 
     //Columns
     public static final String TABLE_NAME = "USERS";
@@ -33,19 +33,19 @@ public class UsuariosRepository {
                 " )";
     }
 
-    private static Usuario cursorToResult(@NonNull final Cursor cursor) {
+    private static User cursorToResult(@NonNull final Cursor cursor) {
 
-        Usuario usuario = new Usuario();
+        User user = new User();
 
-        usuario.setId(cursor.getLong(0));
-        usuario.setUsername(cursor.getString(1));
-        usuario.setPassword(cursor.getString(2));
+        user.setId(cursor.getLong(0));
+        user.setUsername(cursor.getString(1));
+        user.setPassword(cursor.getString(2));
 
-        return usuario;
+        return user;
     }
 
-    public static Usuario getFirst() {
-        Usuario usuario = null;
+    public static User getFirst() {
+        User user = null;
 
         String selectQuery =  "SELECT * " +
                 " FROM " + TABLE_NAME + " LIMIT 1";
@@ -53,16 +53,16 @@ public class UsuariosRepository {
         Cursor cursor = DbHelper.db.rawQuery(selectQuery, null );
 
         if(cursor.moveToFirst()){
-            usuario = cursorToResult(cursor);
+            user = cursorToResult(cursor);
         }
 
         cursor.close();
 
-        return usuario;
+        return user;
     }
 
-    public static Usuario find_byId(long usuarioId) {
-        Usuario usuario = null;
+    public static User find_byId(long usuarioId) {
+        User user = null;
 
         String selectQuery =  "SELECT * " +
                 " FROM " + TABLE_NAME
@@ -71,20 +71,20 @@ public class UsuariosRepository {
 
         Cursor cursor = DbHelper.db.rawQuery(selectQuery, new String[] { String.valueOf(usuarioId) } );
         if(cursor.moveToFirst()) {
-            usuario = cursorToResult(cursor);
+            user = cursorToResult(cursor);
         }
 
         cursor.close();
 
-        return usuario;
+        return user;
     }
 
-    private static Usuario insert(@NonNull final Usuario usuario) {
-        Usuario auxUsuario;
+    private static User insert(@NonNull final User user) {
+        User auxUser;
 
         ContentValues values = new ContentValues();
-        values.put(COLUMN_USERNAME, usuario.getUsername());
-        values.put(COLUMN_PASSWORD, usuario.getPassword());
+        values.put(COLUMN_USERNAME, user.getUsername());
+        values.put(COLUMN_PASSWORD, user.getPassword());
 
         final long insertId = DbHelper.db.insert(TABLE_NAME, null, values);
 
@@ -93,35 +93,35 @@ public class UsuariosRepository {
                     allColumns, COLUMN_ID + " = " + insertId, null, null, null, null);
             cursor.moveToFirst();
 
-            auxUsuario = cursorToResult(cursor);
+            auxUser = cursorToResult(cursor);
             cursor.close();
         }else{
             return null;
         }
 
-        return auxUsuario;
+        return auxUser;
     }
 
-    private static void update(@NonNull final Usuario usuario) {
+    private static void update(@NonNull final User user) {
         ContentValues values = new ContentValues();
-        values.put(COLUMN_USERNAME, usuario.getUsername());
-        values.put(COLUMN_PASSWORD, usuario.getPassword());
+        values.put(COLUMN_USERNAME, user.getUsername());
+        values.put(COLUMN_PASSWORD, user.getPassword());
 
-        DbHelper.db.update(TABLE_NAME, values, COLUMN_ID + "= ?", new String[] { String.valueOf(usuario.getId()) });
+        DbHelper.db.update(TABLE_NAME, values, COLUMN_ID + "= ?", new String[] { String.valueOf(user.getId()) });
     }
 
-    public static Usuario save(@NonNull final Usuario usuario) {
+    public static User save(@NonNull final User user) {
 
-        Usuario auxUsuario;
+        User auxUser;
 
-        if(usuario.getId() != 0){
-            update(usuario);
-            auxUsuario = usuario;
+        if(user.getId() != 0){
+            update(user);
+            auxUser = user;
         }else{
-            auxUsuario = insert(usuario);
+            auxUser = insert(user);
         }
 
-        return auxUsuario;
+        return auxUser;
     }
 
     public static int count() {
@@ -140,9 +140,26 @@ public class UsuariosRepository {
         return count;
     }
 
-    public static void delete(Usuario usuario) {
-        String select =  COLUMN_ID + " = "+usuario.getId();
+    public static void delete(User user) {
+        String select =  COLUMN_ID + " = "+ user.getId();
         DbHelper.db.delete(TABLE_NAME, select, null);
     }
 
+    public User find_byUsername(String username) {
+        User user = null;
+
+        String selectQuery =  "SELECT * " +
+                " FROM " + TABLE_NAME
+                + " WHERE " +
+                COLUMN_USERNAME + " = ?";
+
+        Cursor cursor = DbHelper.db.rawQuery(selectQuery, new String[] { String.valueOf(username) } );
+        if(cursor.moveToFirst()) {
+            user = cursorToResult(cursor);
+        }
+
+        cursor.close();
+
+        return user;
+    }
 }

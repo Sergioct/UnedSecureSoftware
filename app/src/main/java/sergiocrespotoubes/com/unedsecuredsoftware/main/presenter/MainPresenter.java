@@ -1,14 +1,13 @@
 package sergiocrespotoubes.com.unedsecuredsoftware.main.presenter;
 
 
-import android.support.v4.widget.DrawerLayout;
+import android.content.Intent;
 import android.support.v7.app.ActionBar;
-import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 
-import sergiocrespotoubes.com.unedsecuredsoftware.R;
+import sergiocrespotoubes.com.unedsecuredsoftware.SecureApplication;
+import sergiocrespotoubes.com.unedsecuredsoftware.login.view.LoginActivity;
 import sergiocrespotoubes.com.unedsecuredsoftware.main.interfaces.IMainView;
 
 /**
@@ -25,7 +24,11 @@ public class MainPresenter {
         this.view = view;
     }
 
-    public void setupActionBar(Toolbar toolbar, ActionBar actionbar, DrawerLayout drawer_layout) {
+    public void setupActionBar(Toolbar toolbar) {
+
+        activity.setSupportActionBar(toolbar);
+        ActionBar actionbar = activity.getSupportActionBar();
+
         if (actionbar != null) {
             actionbar.setDisplayShowCustomEnabled(true);
             actionbar.setDisplayHomeAsUpEnabled(true);
@@ -33,6 +36,12 @@ public class MainPresenter {
             actionbar.setTitle(null);
             actionbar.setDisplayShowTitleEnabled(false);
         }
+    }
+
+    public void logout(){
+        SecureApplication.user = null;
+        Intent intent = new Intent(activity, LoginActivity.class);
+        activity.startActivity(intent);
     }
 
 }
