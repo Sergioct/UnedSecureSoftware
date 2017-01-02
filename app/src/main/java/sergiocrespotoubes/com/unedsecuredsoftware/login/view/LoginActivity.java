@@ -24,11 +24,14 @@ public class LoginActivity extends AppCompatActivity implements ILoginView {
     @BindView(R.id.et_user)
     TextInputEditText et_user;
 
-    @BindView(R.id.et_user)
+    @BindView(R.id.et_password)
     TextInputEditText et_password;
 
     @BindView(R.id.tv_error)
     TextView tv_error;
+
+    @BindView(R.id.bt_login)
+    TextView bt_login;
 
     LoginPresenter presenter;
 
@@ -58,6 +61,13 @@ public class LoginActivity extends AppCompatActivity implements ILoginView {
     public void errorLogin(String error) {
         et_password.setText("");
         tv_error.setText(error);
+    }
+
+    @Override
+    public void enableForm(boolean enable) {
+        et_user.setEnabled(enable);
+        et_password.setEnabled(enable);
+        bt_login.setEnabled(enable);
     }
 
 }

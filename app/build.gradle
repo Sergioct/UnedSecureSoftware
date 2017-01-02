@@ -55,4 +55,8 @@ dependencies {
 
     /* Image loader */
     compile 'com.squareup.picasso:picasso:2.5.2' //Image loadder
+
+    /* JodaTime */
+    compile 'net.danlew:android.joda:2.9.4.1'
+
 }

@@ -33,6 +33,12 @@ public class RegisterActivity extends AppCompatActivity implements IRegisterView
     @BindView(R.id.et_password2)
     TextInputEditText et_password2;
 
+    @BindView(R.id.et_email)
+    TextInputEditText et_email;
+
+    @BindView(R.id.et_age)
+    TextInputEditText et_age;
+
     @BindView(R.id.tv_error)
     TextView tv_error;
 

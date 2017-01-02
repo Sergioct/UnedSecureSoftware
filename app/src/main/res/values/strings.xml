@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">UnedSecuredSoftware</string>
+    <string name="app_name">Uned Secured Software</string>
 
     <!-- GENERAL TEXTS -->
     <string name="loading">Loading…</string>
@@ -9,7 +9,6 @@
     <string name="end">End</string>
     <string name="yes">Yes</string>
     <string name="no">No</string>
-    <string name="offense">Offense</string>
     <string name="cancel">Cancel</string>
     <string name="create">Create</string>
     <string name="navigation_drawer_open">Open drawer</string>
@@ -24,6 +23,9 @@
     <string name="password">Password</string>
     <string name="login">Login</string>
     <string name="register">Register</string>
+    <string name="complete_username_password">Complete username and password</string>
+    <string name="username_password_incorrect">Username or password incorrect</string>
+    <string name="blocked_time">Blocked time:</string>
 
     <!-- REGISTER -->
     <string name="repeat_password">Repeat Password</string>
@@ -32,6 +34,8 @@
     <string name="error_password_different">Password different</string>
     <string name="error_register">Eror registering</string>
     <string name="form_uncomplete">Form uncomplete</string>
+    <string name="email">Email</string>
+    <string name="age">Age</string>
 
     <!-- MAIN -->
     <string name="main">Principal</string>

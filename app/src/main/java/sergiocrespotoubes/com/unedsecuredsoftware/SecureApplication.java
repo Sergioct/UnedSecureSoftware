@@ -4,6 +4,7 @@ import android.app.Application;
 import android.content.Context;
 import android.util.Log;
 
+import net.danlew.android.joda.JodaTimeAndroid;
 import net.sqlcipher.database.SQLiteDatabase;
 
 import sergiocrespotoubes.com.unedsecuredsoftware.database.DbHelper;
@@ -23,12 +24,17 @@ public class SecureApplication extends Application {
     public static User user;
     public static DbHelper dbHelper;
 
+    public static long timeUnblock;
+
     public void onCreate(){
 
         context = this;
 
         SQLiteDatabase.loadLibs(context);
         dbHelper = new DbHelper(this);
+
+        //Initialize JodaTimeAndroid
+        JodaTimeAndroid.init(this);
     }
 
     public static void userLogged(User auxUser){

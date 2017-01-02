@@ -8,4 +8,6 @@ public interface ILoginView {
 
     void errorLogin(String error);
 
+    void enableForm(boolean enable);
+
 }

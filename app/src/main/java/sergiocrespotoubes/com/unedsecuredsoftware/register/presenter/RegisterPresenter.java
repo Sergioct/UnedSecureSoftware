@@ -5,11 +5,13 @@ import android.content.Intent;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Patterns;
 import android.widget.TextView;
 
 import java.io.UnsupportedEncodingException;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
+import java.util.regex.Pattern;
 
 import sergiocrespotoubes.com.unedsecuredsoftware.R;
 import sergiocrespotoubes.com.unedsecuredsoftware.database.entities.User;
@@ -104,6 +106,11 @@ public class RegisterPresenter {
             return null;
         }
         return generatedPassword;
+    }
+
+    public static boolean isValidEmail(String email) {
+        Pattern pattern = Patterns.EMAIL_ADDRESS;
+        return pattern.matcher(email).matches();
     }
 
 }

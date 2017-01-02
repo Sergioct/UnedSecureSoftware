@@ -1,0 +1,44 @@
+<resources>
+    <string name="app_name">Uned Seguro Software</string>
+
+    <!-- GENERAL TEXTS -->
+    <string name="loading">Cargando…</string>
+    <string name="search">Buscar</string>
+    <string name="quit_message">¿Estás seguro de salir de la aplicación?</string>
+    <string name="start">Comienzo</string>
+    <string name="end">Final</string>
+    <string name="yes">Si</string>
+    <string name="no">No</string>
+    <string name="cancel">Cancelar</string>
+    <string name="create">Crear</string>
+    <string name="navigation_drawer_open">Open drawer</string>
+    <string name="navigation_drawer_close">Close drawer</string>
+    <string name="action_settings">Opciones</string>
+
+    <!-- SPLASH -->
+    <string name="splash_title">UNED - Secure Software</string>
+
+    <!-- LOGIN -->
+    <string name="user">Usuario</string>
+    <string name="password">Contraseña</string>
+    <string name="login">Login</string>
+    <string name="register">Registro</string>
+    <string name="complete_username_password">Completa usuario y contraseña</string>
+    <string name="username_password_incorrect">Usuario o contraseña incorrecto</string>
+    <string name="blocked_time">Tiempo bloqueo:</string>
+
+    <!-- REGISTER -->
+    <string name="repeat_password">Repetir contraseña</string>
+    <string name="create_user">Crear Usuario</string>
+    <string name="error_user_exist">Usuario existe</string>
+    <string name="error_password_different">Contraseñas no coinciden</string>
+    <string name="error_register">Error en el registro</string>
+    <string name="form_uncomplete">Formulario incompleto</string>
+    <string name="email">Email</string>
+    <string name="age">Edad</string>
+
+    <!-- MAIN -->
+    <string name="main">Principal</string>
+
+
+</resources>

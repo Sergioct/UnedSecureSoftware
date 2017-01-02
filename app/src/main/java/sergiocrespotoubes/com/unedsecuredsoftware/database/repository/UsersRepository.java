@@ -163,4 +163,24 @@ public class UsersRepository {
 
         return user;
     }
+
+    public static User find_byUsername_andPassword(String username, String password) {
+        User user = null;
+
+        String selectQuery =  "SELECT * " +
+                " FROM " + TABLE_NAME
+                + " WHERE " +
+                COLUMN_USERNAME + " = ? AND "+ COLUMN_PASSWORD + " = ?";
+
+        Cursor cursor = DbHelper.db.rawQuery(selectQuery, new String[] { username, password } );
+
+        if(cursor.moveToFirst()) {
+            user = cursorToResult(cursor);
+        }
+
+        cursor.close();
+
+        return user;
+    }
+
 }
