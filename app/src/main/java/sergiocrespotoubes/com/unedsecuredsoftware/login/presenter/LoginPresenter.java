@@ -48,4 +48,13 @@ public class LoginPresenter {
         activity.finish();
     }
 
+    public void login(String username, String password) {
+        if(username != null && !username.trim().equals("")
+                && password != null && !password.trim().equals("")){
+
+        }else{
+            view.errorLogin("Error"); //todo
+        }
+    }
+
 }

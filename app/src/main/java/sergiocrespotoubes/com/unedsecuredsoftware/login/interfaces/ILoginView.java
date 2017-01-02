@@ -6,5 +6,6 @@ package sergiocrespotoubes.com.unedsecuredsoftware.login.interfaces;
 
 public interface ILoginView {
 
+    void errorLogin(String error);
 
 }

@@ -154,6 +154,7 @@ public class UsersRepository {
                 COLUMN_USERNAME + " = ?";
 
         Cursor cursor = DbHelper.db.rawQuery(selectQuery, new String[] { String.valueOf(username) } );
+
         if(cursor.moveToFirst()) {
             user = cursorToResult(cursor);
         }

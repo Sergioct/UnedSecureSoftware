@@ -13,8 +13,8 @@ import sergiocrespotoubes.com.unedsecuredsoftware.main.presenter.MainPresenter;
 
 public class MainActivity extends AppCompatActivity implements IMainView {
 
-    @BindView(R.id.main_toolbar)
-    Toolbar toolbar_main;
+    @BindView(R.id.toolbar)
+    Toolbar toolbar;
 
     @BindView(R.id.tv_title)
     TextView tv_title;
@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity implements IMainView {
         presenter = new MainPresenter(this, this);
 
         //init
-        presenter.setupActionBar(toolbar_main);
+        presenter.setupActionBar(toolbar);
         tv_title.setText(R.string.main);
     }
 
