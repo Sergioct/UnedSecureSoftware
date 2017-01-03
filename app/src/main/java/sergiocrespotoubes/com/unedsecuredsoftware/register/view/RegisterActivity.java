@@ -58,7 +58,7 @@ public class RegisterActivity extends AppCompatActivity implements IRegisterView
 
     @OnClick(R.id.bt_register)
     public void onRegisterClick(){
-        presenter.createUser(et_username.getText().toString(), et_password1.getText().toString(), et_password2.getText().toString(), tv_error);
+        presenter.createUser(et_username.getText().toString(), et_password1.getText().toString(), et_password2.getText().toString(), et_email.getText().toString(), et_age.getText().toString());
     }
 
 

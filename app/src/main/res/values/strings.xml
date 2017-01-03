@@ -36,6 +36,10 @@
     <string name="form_uncomplete">Form uncomplete</string>
     <string name="email">Email</string>
     <string name="age">Age</string>
+    <string name="error_age">Age must be between 5–120 years old</string>
+    <string name="error_bad_email">The email is not valid</string>
+    <string name="error_upper_number">Password need 1 uppercase and 1 number</string>
+    <string name="error_short_password">The password is too short</string>
 
     <!-- MAIN -->
     <string name="main">Principal</string>

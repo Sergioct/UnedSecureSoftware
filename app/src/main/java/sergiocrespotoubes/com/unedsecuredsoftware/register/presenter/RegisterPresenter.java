@@ -49,34 +49,58 @@ public class RegisterPresenter {
         }
     }
 
-    public void createUser(String username, String password1, String password2, TextView tv_error) {
+    public void createUser(String username, String password1, String password2, String email, String age) {
         UsersRepository usersRepository = new UsersRepository();
 
         if(username != null && !username.trim().equals("")
                 && password1 != null && !password1.trim().equals("")
-                && password2 != null && !password2.trim().equals("")){
+                && password2 != null && !password2.trim().equals("")
+                && email != null && !email.trim().equals("")
+                && age != null && !age.trim().equals("")){
             if(password1.equals(password2)){
-                User user = usersRepository.find_byUsername(username);
+                boolean validPassword = true;
 
-                if(user != null){
-                    view.showMessageError(activity.getString(R.string.error_user_exist));
-                }else{
-                    String password;
+                validPassword = password1.matches(".*\\d+.*") && !password1.equals(password1.toLowerCase());
 
-                    password = generatePassword(password1);
-
-                    if(password != null){
-                        user = new User();
-
-                        user.setUsername(username);
-                        user.setPassword(password);
-                        user.save();
-
-                        Intent intent = new Intent(activity, MainActivity.class);
-                        activity.startActivity(intent);
+                if(validPassword){
+                    if(password1.length() < 3){
+                        view.showMessageError(activity.getString(R.string.error_short_password));
                     }else{
-                        view.showMessageError(activity.getString(R.string.error_register));
+                        if (isValidEmail(email)) {
+                            int iAge = Integer.valueOf(age);
+
+                            if(iAge >= 5 && iAge <= 120){
+                                User user = usersRepository.find_byUsername(username);
+
+                                if(user != null){
+                                    view.showMessageError(activity.getString(R.string.error_user_exist));
+                                }else{
+                                    String password;
+
+                                    password = generatePassword(password1);
+
+                                    if(password != null){
+                                        user = new User();
+
+                                        user.setUsername(username);
+                                        user.setPassword(password);
+                                        user.save();
+
+                                        Intent intent = new Intent(activity, MainActivity.class);
+                                        activity.startActivity(intent);
+                                    }else{
+                                        view.showMessageError(activity.getString(R.string.error_register));
+                                    }
+                                }
+                            }else{
+                                view.showMessageError(activity.getString(R.string.error_age));
+                            }
+                        }else{
+                            view.showMessageError(activity.getString(R.string.error_bad_email));
+                        }
                     }
+                }else{
+                    view.showMessageError(activity.getString(R.string.error_upper_number));
                 }
             }else{
                 view.showMessageError(activity.getString(R.string.error_password_different));

@@ -36,6 +36,10 @@
     <string name="form_uncomplete">Formulario incompleto</string>
     <string name="email">Email</string>
     <string name="age">Edad</string>
+    <string name="error_age">La edad tiene que comprender entre 5–120 años</string>
+    <string name="error_bad_email">El email no es válido</string>
+    <string name="error_upper_number">La contraseña necesita una mayúscula y un número</string>
+    <string name="error_short_password">La contraseña es demasiado corta</string>
 
     <!-- MAIN -->
     <string name="main">Principal</string>
