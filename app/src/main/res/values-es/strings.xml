@@ -45,7 +45,8 @@
     <string name="contacts">Contactos</string>
 
     <!-- MEMORY ACTIVITIES -->
-    <string name="activities_stack">Actividades cargadas</string>
+    <string name="activities_memory">Memoria actividades</string>
+    <string name="activities_stack">La vista permite testear los problemas de memoria al tener guardadas múltiples actividades en la pila de actividades.</string>
     <string name="new_activity_load">Agregar actividad a pila</string>
     <string name="clear_stack">Limpiar pila de actividades</string>
 

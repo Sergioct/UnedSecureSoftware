@@ -39,7 +39,7 @@ public class MemoryActivitiesActivity extends AppCompatActivity implements IMemo
 
         //init
         presenter.setupActionBar(toolbar_main);
-        tv_title.setText(R.string.contacts);
+        tv_title.setText(R.string.activities_memory);
 
         //load stack number
         Bundle bundle = getIntent().getExtras();
