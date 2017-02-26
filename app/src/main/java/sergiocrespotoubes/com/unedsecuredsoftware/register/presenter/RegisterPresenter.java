@@ -14,6 +14,7 @@ import java.security.NoSuchAlgorithmException;
 import java.util.regex.Pattern;
 
 import sergiocrespotoubes.com.unedsecuredsoftware.R;
+import sergiocrespotoubes.com.unedsecuredsoftware.SecureApplication;
 import sergiocrespotoubes.com.unedsecuredsoftware.database.entities.User;
 import sergiocrespotoubes.com.unedsecuredsoftware.database.repository.UsersRepository;
 import sergiocrespotoubes.com.unedsecuredsoftware.main.view.MainActivity;
@@ -25,7 +26,7 @@ import sergiocrespotoubes.com.unedsecuredsoftware.register.interfaces.IRegisterV
 
 public class RegisterPresenter {
 
-    final String SALT = "Un3D!";
+
 
     AppCompatActivity activity;
     IRegisterView view;
@@ -77,7 +78,7 @@ public class RegisterPresenter {
                                 }else{
                                     String password;
 
-                                    password = generatePassword(password1);
+                                    password = SecureApplication.generatePassword(password1);
 
                                     if(password != null){
                                         user = new User();
@@ -111,27 +112,7 @@ public class RegisterPresenter {
         }
     }
 
-    public String generatePassword(String passwordToHash){
-        String generatedPassword = null;
-        try {
-            MessageDigest md = MessageDigest.getInstance("SHA-512");
-            md.update(SALT.getBytes("UTF-8"));
-            byte[] bytes = md.digest(passwordToHash.getBytes("UTF-8"));
-            StringBuilder sb = new StringBuilder();
-            for(int i=0; i< bytes.length ;i++){
-                sb.append(Integer.toString((bytes[i] & 0xff) + 0x100, 16).substring(1));
-            }
-            generatedPassword = sb.toString();
-        }
-        catch (NoSuchAlgorithmException e){
-            e.printStackTrace();
-            return null;
-        } catch (UnsupportedEncodingException e) {
-            e.printStackTrace();
-            return null;
-        }
-        return generatedPassword;
-    }
+
 
     public static boolean isValidEmail(String email) {
         Pattern pattern = Patterns.EMAIL_ADDRESS;

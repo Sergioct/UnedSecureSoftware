@@ -32,7 +32,7 @@ public class ContactsActivity extends AppCompatActivity implements IContactsView
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login);
+        setContentView(R.layout.activity_contacts);
         ButterKnife.bind(this);
         presenter = new ContactsPresenter(this, this);
 
@@ -53,7 +53,6 @@ public class ContactsActivity extends AppCompatActivity implements IContactsView
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
-            // Respond to the action bar's Up/Home button
             case android.R.id.home:
                 onBackPressed();
                 return true;

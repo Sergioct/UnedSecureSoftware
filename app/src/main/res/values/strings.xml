@@ -45,7 +45,7 @@
     <string name="contacts">Contacts</string>
 
     <!-- MEMORY ACTIVITIES -->
-    <string name="activities_stack">Activities stack</string>
+    <string name="activities_stack">Memory problems</string>
     <string name="new_activity_load">Add activity stack</string>
     <string name="clear_stack">Clear activities stack</string>
 

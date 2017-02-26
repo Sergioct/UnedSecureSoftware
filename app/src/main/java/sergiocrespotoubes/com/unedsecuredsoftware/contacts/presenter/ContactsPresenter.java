@@ -20,6 +20,7 @@ import java.util.List;
 import sergiocrespotoubes.com.unedsecuredsoftware.R;
 import sergiocrespotoubes.com.unedsecuredsoftware.SecureApplication;
 import sergiocrespotoubes.com.unedsecuredsoftware.contacts.interfaces.IContactsView;
+import sergiocrespotoubes.com.unedsecuredsoftware.contacts.utils.ContactsAdapter;
 import sergiocrespotoubes.com.unedsecuredsoftware.database.entities.User;
 import sergiocrespotoubes.com.unedsecuredsoftware.database.repository.UsersRepository;
 import sergiocrespotoubes.com.unedsecuredsoftware.main.view.MainActivity;
@@ -48,8 +49,8 @@ public class ContactsPresenter {
 
         if (actionbar != null) {
             actionbar.setDisplayShowCustomEnabled(true);
-            //actionbar.setDisplayHomeAsUpEnabled(true);
-            //actionbar.setHomeButtonEnabled(true);
+            actionbar.setDisplayHomeAsUpEnabled(true);
+            actionbar.setHomeButtonEnabled(true);
             actionbar.setTitle(null);
             actionbar.setDisplayShowTitleEnabled(false);
         }
@@ -91,6 +92,7 @@ public class ContactsPresenter {
                 lContacts.add(myContact);
             }
         }
+        lv_contacts.setAdapter(new ContactsAdapter(activity, lContacts));
     }
 
 }

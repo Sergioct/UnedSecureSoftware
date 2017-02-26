@@ -1,22 +1,13 @@
 package sergiocrespotoubes.com.unedsecuredsoftware.memory_activities.presenter;
 
 
-import android.content.ContentResolver;
 import android.content.Intent;
-import android.database.Cursor;
-import android.provider.ContactsContract;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.widget.ListView;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import sergiocrespotoubes.com.unedsecuredsoftware.contacts.interfaces.IContactsView;
 import sergiocrespotoubes.com.unedsecuredsoftware.memory_activities.interfaces.IMemoryActivitiesView;
 import sergiocrespotoubes.com.unedsecuredsoftware.memory_activities.view.MemoryActivitiesActivity;
-import sergiocrespotoubes.com.unedsecuredsoftware.objects.MyContact;
 
 /**
  * Created by Sergio on 02-Oct-16.
@@ -41,8 +32,8 @@ public class MemoryActivitiesPresenter {
 
         if (actionbar != null) {
             actionbar.setDisplayShowCustomEnabled(true);
-            //actionbar.setDisplayHomeAsUpEnabled(true);
-            //actionbar.setHomeButtonEnabled(true);
+            actionbar.setDisplayHomeAsUpEnabled(true);
+            actionbar.setHomeButtonEnabled(true);
             actionbar.setTitle(null);
             actionbar.setDisplayShowTitleEnabled(false);
         }
@@ -50,17 +41,20 @@ public class MemoryActivitiesPresenter {
 
     public void loadStackNumber(int activityStack) {
         activitiesLoaded = activityStack;
+        view.changeStackValue(activitiesLoaded);
     }
 
     public void addActivity() {
         Intent intent = new Intent(activity, MemoryActivitiesActivity.class);
+        intent.putExtra("ACTIVITIES_STACK", (activitiesLoaded + 1));
         activity.startActivity(intent);
     }
 
     public void clearActivity() {
         Intent intent = new Intent(activity, MemoryActivitiesActivity.class);
-        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP|Intent.FLAG_ACTIVITY_SINGLE_TOP);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
         activity.startActivity(intent);
+        activity.finish();
     }
 
 }

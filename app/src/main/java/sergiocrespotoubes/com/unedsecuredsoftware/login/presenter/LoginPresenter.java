@@ -71,7 +71,7 @@ public class LoginPresenter {
     public void login(String username, String password) {
         if(username != null && !username.trim().equals("")
                 && password != null && !password.trim().equals("")){
-            User user = UsersRepository.find_byUsername_andPassword(username, password);
+            User user = UsersRepository.find_byUsername_andPassword(username, SecureApplication.generatePassword(password));
 
             if(user != null){
                 Intent intent = new Intent(activity, MainActivity.class);

@@ -42,8 +42,9 @@ public class MemoryActivitiesActivity extends AppCompatActivity implements IMemo
         tv_title.setText(R.string.contacts);
 
         //load stack number
-        if(savedInstanceState != null){
-            presenter.loadStackNumber(savedInstanceState.getInt("ACTIVITIES_STACK", 1));
+        Bundle bundle = getIntent().getExtras();
+        if(bundle != null){
+            presenter.loadStackNumber(bundle.getInt("ACTIVITIES_STACK", 1));
         }else{
             presenter.loadStackNumber(1);
         }
@@ -51,7 +52,7 @@ public class MemoryActivitiesActivity extends AppCompatActivity implements IMemo
 
     @Override
     public void changeStackValue(int stackNumber) {
-        tv_stack_value.setText(stackNumber);
+        tv_stack_value.setText("" + stackNumber);
     }
 
     @OnClick(R.id.bt_add_activity)
