@@ -41,6 +41,14 @@
     <string name="error_upper_number">La contraseña necesita una mayúscula y un número</string>
     <string name="error_short_password">La contraseña es demasiado corta</string>
 
+    <!-- CONTACTS -->
+    <string name="contacts">Contactos</string>
+
+    <!-- MEMORY ACTIVITIES -->
+    <string name="activities_stack">Actividades cargadas</string>
+    <string name="new_activity_load">Agregar actividad a pila</string>
+    <string name="clear_stack">Limpiar pila de actividades</string>
+
     <!-- MAIN -->
     <string name="main">Principal</string>
 

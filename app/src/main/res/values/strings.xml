@@ -41,6 +41,14 @@
     <string name="error_upper_number">Password need 1 uppercase and 1 number</string>
     <string name="error_short_password">The password is too short</string>
 
+    <!-- CONTACTS -->
+    <string name="contacts">Contacts</string>
+
+    <!-- MEMORY ACTIVITIES -->
+    <string name="activities_stack">Activities stack</string>
+    <string name="new_activity_load">Add activity stack</string>
+    <string name="clear_stack">Clear activities stack</string>
+
     <!-- MAIN -->
     <string name="main">Principal</string>
 

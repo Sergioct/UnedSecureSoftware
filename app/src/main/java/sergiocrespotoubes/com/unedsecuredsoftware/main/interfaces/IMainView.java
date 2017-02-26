@@ -6,5 +6,4 @@ package sergiocrespotoubes.com.unedsecuredsoftware.main.interfaces;
 
 public interface IMainView {
 
-
 }

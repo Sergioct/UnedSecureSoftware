@@ -88,6 +88,7 @@ public class RegisterPresenter {
 
                                         Intent intent = new Intent(activity, MainActivity.class);
                                         activity.startActivity(intent);
+                                        activity.finish();
                                     }else{
                                         view.showMessageError(activity.getString(R.string.error_register));
                                     }
