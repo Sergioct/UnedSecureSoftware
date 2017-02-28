@@ -46,7 +46,8 @@
 
     <!-- MEMORY ACTIVITIES -->
     <string name="activities_memory">Activities memory</string>
-    <string name="activities_stack">This view test activities stack memory problem.</string>
+    <string name="activities_stack_title">This view test activities stack memory problem.</string>
+    <string name="activities_stack">Activities stack</string>
     <string name="new_activity_load">Add activity stack</string>
     <string name="clear_stack">Clear activities stack</string>
 

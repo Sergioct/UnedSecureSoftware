@@ -11,7 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/dimen32"
-        android:text="@string/activities_stack"/>
+        android:text="@string/activities_stack_title"/>
 
     <TextView
         android:layout_width="match_parent"
