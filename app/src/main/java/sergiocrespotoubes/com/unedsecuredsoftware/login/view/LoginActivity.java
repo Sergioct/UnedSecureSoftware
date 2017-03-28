@@ -49,7 +49,7 @@ public class LoginActivity extends AppCompatActivity implements ILoginView {
 
     @OnClick(R.id.bt_login)
     public void onLoginClick(){
-        presenter.login(et_user.getText().toString(), et_password.getText().toString());
+        presenter.login(et_user.getText().toString(), et_password.getText().toString().toCharArray());
     }
 
     @OnClick(R.id.tv_register)

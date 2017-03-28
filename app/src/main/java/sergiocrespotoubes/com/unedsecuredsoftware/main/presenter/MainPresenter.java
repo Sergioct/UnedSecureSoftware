@@ -16,6 +16,7 @@ import sergiocrespotoubes.com.unedsecuredsoftware.contacts.view.ContactsActivity
 import sergiocrespotoubes.com.unedsecuredsoftware.login.view.LoginActivity;
 import sergiocrespotoubes.com.unedsecuredsoftware.main.interfaces.IMainView;
 import sergiocrespotoubes.com.unedsecuredsoftware.memory_activities.view.MemoryActivitiesActivity;
+import sergiocrespotoubes.com.unedsecuredsoftware.overflow_int.view.OverflowIntActivity;
 
 /**
  * Created by Sergio on 02-Oct-16.
@@ -71,6 +72,12 @@ public class MainPresenter {
 
     public void loadActivitiesMemory() {
         Intent intent = new Intent(activity, MemoryActivitiesActivity.class);
+        activity.startActivity(intent);
+        activity.finish();
+    }
+
+    public void loadOverflowInt() {
+        Intent intent = new Intent(activity, OverflowIntActivity.class);
         activity.startActivity(intent);
         activity.finish();
     }

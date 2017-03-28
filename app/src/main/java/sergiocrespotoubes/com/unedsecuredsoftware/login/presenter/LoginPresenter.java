@@ -12,6 +12,8 @@ import android.widget.TextView;
 
 import org.joda.time.DateTime;
 
+import java.util.Arrays;
+
 import butterknife.BindView;
 import sergiocrespotoubes.com.unedsecuredsoftware.R;
 import sergiocrespotoubes.com.unedsecuredsoftware.SecureApplication;
@@ -68,10 +70,13 @@ public class LoginPresenter {
         activity.finish();
     }
 
-    public void login(String username, String password) {
+    public void login(String username, char[] password) {
         if(username != null && !username.trim().equals("")
-                && password != null && !password.trim().equals("")){
-            User user = UsersRepository.find_byUsername_andPassword(username, SecureApplication.generatePassword(password));
+                && password != null){
+            User user = UsersRepository.find_byUsername_andPassword(username,
+                    SecureApplication.generatePassword(password.toString()));
+
+            Arrays.fill(password, ' ');
 
             if(user != null){
                 Intent intent = new Intent(activity, MainActivity.class);

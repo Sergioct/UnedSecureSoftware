@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="32dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="18sp"
+                android:text="Byte"/>
+
+            <EditText
+                android:id="@+id/et_byte"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <Button
+                android:id="@+id/bt_byte"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="8dp"
+                android:text="Byte"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="18sp"
+                android:layout_marginTop="16dp"
+                android:text="Short"/>
+
+            <EditText
+                android:id="@+id/et_short"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <Button
+                android:id="@+id/bt_short"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Byte"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="18sp"
+                android:layout_marginTop="16dp"
+                android:text="Int"/>
+
+            <EditText
+                android:id="@+id/et_int"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <Button
+                android:id="@+id/bt_int"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Int"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="18sp"
+                android:layout_marginTop="16dp"
+                android:text="Long"/>
+
+            <EditText
+                android:id="@+id/et_long"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <Button
+                android:id="@+id/bt_long"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Long"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="18sp"
+                android:layout_marginTop="16dp"
+                android:text="Float"/>
+
+            <EditText
+                android:id="@+id/et_float"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <Button
+                android:id="@+id/bt_float"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Float"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="18sp"
+                android:layout_marginTop="16dp"
+                android:text="Double"/>
+
+            <EditText
+                android:id="@+id/et_double"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <Button
+                android:id="@+id/bt_double"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Double"/>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>
