@@ -49,6 +49,11 @@ public class MainActivity extends AppCompatActivity implements IMainView {
         presenter.loadActivitiesMemory();
     }
 
+    @OnClick(R.id.bt_overflow_int)
+    public void onOverfloatIntClick(){
+        presenter.loadOverflowInt();
+    }
+
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);

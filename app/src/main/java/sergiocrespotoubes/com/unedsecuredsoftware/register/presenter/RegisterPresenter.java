@@ -26,8 +26,6 @@ import sergiocrespotoubes.com.unedsecuredsoftware.register.interfaces.IRegisterV
 
 public class RegisterPresenter {
 
-
-
     AppCompatActivity activity;
     IRegisterView view;
 

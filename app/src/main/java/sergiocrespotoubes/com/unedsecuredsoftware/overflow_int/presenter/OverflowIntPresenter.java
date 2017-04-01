@@ -8,7 +8,9 @@ import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.widget.ListView;
+import android.widget.Toast;
 
+import java.text.NumberFormat;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -45,7 +47,57 @@ public class OverflowIntPresenter {
     }
 
     public void checkByte(String sByte) {
+        try {
+            byte value = Byte.parseByte(sByte);
+            Toast.makeText(activity, "Value: " + value, Toast.LENGTH_SHORT).show();
+        }catch (NumberFormatException e) {
+            Toast.makeText(activity, "Parse error", Toast.LENGTH_SHORT).show();
+        }
+    }
 
+    public void checkShort(String sByte) {
+        try {
+            short value = Short.parseShort(sByte);
+            Toast.makeText(activity, "Value: " + value, Toast.LENGTH_SHORT).show();
+        }catch (NumberFormatException e) {
+            Toast.makeText(activity, "Parse error", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    public void checkInt(String sInt) {
+        try {
+            int value = Integer.parseInt(sInt);
+            Toast.makeText(activity, "Value: " + value, Toast.LENGTH_SHORT).show();
+        }catch (NumberFormatException e) {
+            Toast.makeText(activity, "Parse error", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    public void checkLong(String sLong) {
+        try {
+            long value = Integer.parseInt(sLong);
+            Toast.makeText(activity, "Value: " + value, Toast.LENGTH_SHORT).show();
+        }catch (NumberFormatException e) {
+            Toast.makeText(activity, "Parse error", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    public void checkDouble(String sDouble) {
+        try {
+            double value = Double.parseDouble(sDouble);
+            Toast.makeText(activity, "Value: " + value, Toast.LENGTH_SHORT).show();
+        }catch (NumberFormatException e) {
+            Toast.makeText(activity, "Parse error", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    public void checkFloat(String sFloat) {
+        try {
+            float value = Float.parseFloat(sFloat);
+            Toast.makeText(activity, "Value: " + value, Toast.LENGTH_SHORT).show();
+        }catch (NumberFormatException e) {
+            Toast.makeText(activity, "Parse error", Toast.LENGTH_SHORT).show();
+        }
     }
 
 }

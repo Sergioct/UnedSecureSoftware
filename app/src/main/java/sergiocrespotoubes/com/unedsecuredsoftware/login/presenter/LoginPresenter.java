@@ -31,9 +31,9 @@ import sergiocrespotoubes.com.unedsecuredsoftware.register.view.RegisterActivity
 public class LoginPresenter {
 
     //const
-    long MILLIS_IN_HOUR = 3600000;
-    long MILLIS_IN_MINUTE = 60000;
-    long TIME_BLOCK = 30000;
+    private long MILLIS_IN_HOUR = 3600000;
+    private long MILLIS_IN_MINUTE = 60000;
+    private long TIME_BLOCK = 30000;
 
     AppCompatActivity activity;
     ILoginView view;
@@ -74,7 +74,7 @@ public class LoginPresenter {
         if(username != null && !username.trim().equals("")
                 && password != null){
             User user = UsersRepository.find_byUsername_andPassword(username,
-                    SecureApplication.generatePassword(password.toString()));
+                    SecureApplication.generatePassword(new String(password)));
 
             Arrays.fill(password, ' ');
 

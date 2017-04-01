@@ -29,6 +29,21 @@ public class OverflowIntActivity extends AppCompatActivity implements IOverflowI
     @BindView(R.id.et_byte)
     EditText et_byte;
 
+    @BindView(R.id.et_short)
+    EditText et_short;
+
+    @BindView(R.id.et_int)
+    EditText et_int;
+
+    @BindView(R.id.et_long)
+    EditText et_long;
+
+    @BindView(R.id.et_float)
+    EditText et_float;
+
+    @BindView(R.id.et_double)
+    EditText et_double;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -62,6 +77,31 @@ public class OverflowIntActivity extends AppCompatActivity implements IOverflowI
     @OnClick(R.id.bt_byte)
     public void onByteClick(){
         presenter.checkByte(et_byte.getText().toString());
+    }
+
+    @OnClick(R.id.bt_short)
+    public void onShortClick(){
+        presenter.checkShort(et_short.getText().toString());
+    }
+
+    @OnClick(R.id.bt_int)
+    public void onIntClick(){
+        presenter.checkInt(et_int.getText().toString());
+    }
+
+    @OnClick(R.id.bt_long)
+    public void onLongClick(){
+        presenter.checkLong(et_long.getText().toString());
+    }
+
+    @OnClick(R.id.bt_float)
+    public void onFloatClick(){
+        presenter.checkFloat(et_float.getText().toString());
+    }
+
+    @OnClick(R.id.bt_double)
+    public void onDoubleClick(){
+        presenter.checkDouble(et_double.getText().toString());
     }
 
 }
