@@ -6,4 +6,6 @@ package sergiocrespotoubes.com.unedsecuredsoftware.overflow_int.interfaces;
 
 public interface IOverflowIntView {
 
+    public void showToast(String message);
+
 }

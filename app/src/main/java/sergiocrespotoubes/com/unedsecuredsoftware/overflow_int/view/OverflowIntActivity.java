@@ -8,6 +8,7 @@ import android.view.MenuItem;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -102,6 +103,11 @@ public class OverflowIntActivity extends AppCompatActivity implements IOverflowI
     @OnClick(R.id.bt_double)
     public void onDoubleClick(){
         presenter.checkDouble(et_double.getText().toString());
+    }
+
+    @Override
+    public void showToast(String message) {
+        Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
     }
 
 }

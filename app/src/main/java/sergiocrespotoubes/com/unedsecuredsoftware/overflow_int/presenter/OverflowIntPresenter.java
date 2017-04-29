@@ -1,27 +1,16 @@
 package sergiocrespotoubes.com.unedsecuredsoftware.overflow_int.presenter;
 
 
-import android.content.ContentResolver;
-import android.database.Cursor;
-import android.provider.ContactsContract;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.widget.ListView;
 import android.widget.Toast;
 
-import java.text.NumberFormat;
-import java.util.ArrayList;
-import java.util.List;
-
-import sergiocrespotoubes.com.unedsecuredsoftware.contacts.utils.ContactsAdapter;
-import sergiocrespotoubes.com.unedsecuredsoftware.objects.MyContact;
 import sergiocrespotoubes.com.unedsecuredsoftware.overflow_int.interfaces.IOverflowIntView;
 
 /**
  * Created by Sergio on 02-Oct-16.
  */
-
 public class OverflowIntPresenter {
 
     AppCompatActivity activity;
@@ -49,54 +38,54 @@ public class OverflowIntPresenter {
     public void checkByte(String sByte) {
         try {
             byte value = Byte.parseByte(sByte);
-            Toast.makeText(activity, "Value: " + value, Toast.LENGTH_SHORT).show();
+            view.showToast("Value: " + value);
         }catch (NumberFormatException e) {
-            Toast.makeText(activity, "Parse error", Toast.LENGTH_SHORT).show();
+            view.showToast("Parse error");
         }
     }
 
     public void checkShort(String sByte) {
         try {
             short value = Short.parseShort(sByte);
-            Toast.makeText(activity, "Value: " + value, Toast.LENGTH_SHORT).show();
+            view.showToast("Value: " + value);
         }catch (NumberFormatException e) {
-            Toast.makeText(activity, "Parse error", Toast.LENGTH_SHORT).show();
+            view.showToast("Parse error");
         }
     }
 
     public void checkInt(String sInt) {
         try {
             int value = Integer.parseInt(sInt);
-            Toast.makeText(activity, "Value: " + value, Toast.LENGTH_SHORT).show();
+            view.showToast("Value: " + value);
         }catch (NumberFormatException e) {
-            Toast.makeText(activity, "Parse error", Toast.LENGTH_SHORT).show();
+            view.showToast("Parse error");
         }
     }
 
     public void checkLong(String sLong) {
         try {
             long value = Integer.parseInt(sLong);
-            Toast.makeText(activity, "Value: " + value, Toast.LENGTH_SHORT).show();
+            view.showToast("Value: " + value);
         }catch (NumberFormatException e) {
-            Toast.makeText(activity, "Parse error", Toast.LENGTH_SHORT).show();
+            view.showToast("Parse error");
         }
     }
 
     public void checkDouble(String sDouble) {
         try {
             double value = Double.parseDouble(sDouble);
-            Toast.makeText(activity, "Value: " + value, Toast.LENGTH_SHORT).show();
+            view.showToast("Value: " + value);
         }catch (NumberFormatException e) {
-            Toast.makeText(activity, "Parse error", Toast.LENGTH_SHORT).show();
+            view.showToast("Parse error");
         }
     }
 
     public void checkFloat(String sFloat) {
         try {
             float value = Float.parseFloat(sFloat);
-            Toast.makeText(activity, "Value: " + value, Toast.LENGTH_SHORT).show();
+            view.showToast("Value: " + value);
         }catch (NumberFormatException e) {
-            Toast.makeText(activity, "Parse error", Toast.LENGTH_SHORT).show();
+            view.showToast("Parse error");
         }
     }
 
