@@ -60,7 +60,6 @@ public class ExampleUnitTest {
 
     ContactsPresenter contactsPresenter;
     LoginPresenter loginPresenter;
-    UsersRepository usersRepository;
     MainPresenter mainPresenter;
     MemoryActivitiesPresenter memoryActivitiesPresenter;
     OverflowIntPresenter overflowIntPresenter;
@@ -70,13 +69,17 @@ public class ExampleUnitTest {
     @Test
     public void TestAll(){
 
-        PowerMockito.mockStatic(Toast.class);
-        PowerMockito.mockStatic(DateTime.class);
-        Toast toast = PowerMockito.mock(Toast.class);
+        AppCompatActivity activity = Mockito.mock(AppCompatActivity.class);
 
-        Mockito.when(Toast.makeText(Mockito.eq(mMockContext), Mockito.eq(Mockito.anyString()), toast.LENGTH_SHORT)).thenReturn(toast);
-        //Mockito.doNothing().when(toast).show();
+        PowerMockito.mockStatic(DateTime.class);
+
+        PowerMockito.mockStatic(Toast.class);
+        Toast toast = PowerMockito.mock(Toast.class);
+        Mockito.when(Toast.makeText(Mockito.eq(mMockContext), Mockito.eq(Mockito.anyString()), Toast.LENGTH_SHORT)).thenReturn(toast);
         Mockito.when(activity.getString(Mockito.anyInt())).thenReturn(Mockito.anyString());
+
+
+        //Mockito.doNothing().when(toast).show();
 
         contactsPresenter = new ContactsPresenter(activity, new IContactsView() {
             @Override
@@ -289,6 +292,6 @@ public class ExampleUnitTest {
 
     @Test
     public void addition_isCorrect() throws Exception {
-        assertEquals(4, metodoSuma(2+2));
+        assertEquals(4, 2+2);
     }
 }

@@ -32,6 +32,7 @@ public class SecureApplication extends Application {
     public static long timeUnblock;
 
     public void onCreate(){
+        super.onCreate();
 
         context = this;
 
